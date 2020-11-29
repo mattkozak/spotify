@@ -79,3 +79,15 @@ for i, v in enumerate(y):
 
 # export plot as jpg #
 plt.savefig('top50_songs_per_artist.jpg', bbox_inches="tight")
+
+popularity = top50['popularity']
+artists = top50['artist']
+
+plt.figure(figsize=(10,6))
+
+ax= sb.boxplot(x=popularity, y=artists, data=top50)
+plt.xlim(0, 100)
+plt.xlabel('Popularity (0-100)')
+plt.ylabel('')
+plt.title('Song Popularity by Artist', fontweight='bold', fontsize=18)
+plt.savefig('top50_artist_popularity.jpg', bbox_inches="tight")
